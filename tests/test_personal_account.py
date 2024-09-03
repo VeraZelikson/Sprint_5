@@ -7,67 +7,67 @@ from src.conftest import driver
 def test_move_to_personal_account(driver):
     driver.get(base_url)
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
 
-    driver.find_element(*LoginFormLocators.input_email_login).send_keys(test_data['login'])
-    driver.find_element(*RegisterFormLocators.input_password).send_keys(test_data['password'])
-    driver.find_element(*LoginFormLocators.button_login).click()
+    driver.find_element(*LoginFormLocators.INPUT_EMAIL_LOGIN).send_keys(test_data['login'])
+    driver.find_element(*RegisterFormLocators.INPUT_PASSWORD).send_keys(test_data['password'])
+    driver.find_element(*LoginFormLocators.BUTTON_LOGIN).click()
 
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.button_order)))
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.BUTTON_ORDER)))
 
-    section_header = driver.find_element(*OrderButtonIsDisplayedLocators.button_order)
+    section_header = driver.find_element(*OrderButtonIsDisplayedLocators.BUTTON_ORDER)
     assert section_header.is_displayed()
 
 def test_move_from_personal_account_to_constructor_true(driver):
     driver.get(base_url)
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
 
-    driver.find_element(*LoginFormLocators.input_email_login).send_keys(test_data['login'])
-    driver.find_element(*RegisterFormLocators.input_password).send_keys(test_data['password'])
-    driver.find_element(*LoginFormLocators.button_login).click()
+    driver.find_element(*LoginFormLocators.INPUT_EMAIL_LOGIN).send_keys(test_data['login'])
+    driver.find_element(*RegisterFormLocators.INPUT_PASSWORD).send_keys(test_data['password'])
+    driver.find_element(*LoginFormLocators.BUTTON_LOGIN).click()
 
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.button_order)))
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.BUTTON_ORDER)))
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
-    driver.find_element(*MainPageLocators.button_constructor).click()
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((MainPageLocators.header_make_burger)))
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
+    driver.find_element(*MainPageLocators.BUTTON_CONSTRUCTOR).click()
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((MainPageLocators.HEADER_MAKE_BURGER)))
 
-    assert driver.find_element(*MainPageLocators.header_make_burger).is_displayed()
+    assert driver.find_element(*MainPageLocators.HEADER_MAKE_BURGER).is_displayed()
 
 def test_move_from_personal_account_to_logo_true(driver):
     driver.get(base_url)
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
 
-    driver.find_element(*LoginFormLocators.input_email_login).send_keys(test_data['login'])
-    driver.find_element(*RegisterFormLocators.input_password).send_keys(test_data['password'])
-    driver.find_element(*LoginFormLocators.button_login).click()
+    driver.find_element(*LoginFormLocators.INPUT_EMAIL_LOGIN).send_keys(test_data['login'])
+    driver.find_element(*RegisterFormLocators.INPUT_PASSWORD).send_keys(test_data['password'])
+    driver.find_element(*LoginFormLocators.BUTTON_LOGIN).click()
 
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.button_order)))
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.BUTTON_ORDER)))
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
-    driver.find_element(*MainPageLocators.button_burger_logo).click()
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((MainPageLocators.header_make_burger)))
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
+    driver.find_element(*MainPageLocators.BUTTON_BURGER_LOGO).click()
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((MainPageLocators.HEADER_MAKE_BURGER)))
 
-    section_header = driver.find_element(*MainPageLocators.header_make_burger)
+    section_header = driver.find_element(*MainPageLocators.HEADER_MAKE_BURGER)
     assert section_header.is_displayed()
 
 def test_move_from_personal_account_to_logout_true(driver):
     driver.get(base_url)
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
 
-    driver.find_element(*LoginFormLocators.input_email_login).send_keys(test_data['login'])
-    driver.find_element(*RegisterFormLocators.input_password).send_keys(test_data['password'])
-    driver.find_element(*LoginFormLocators.button_login).click()
+    driver.find_element(*LoginFormLocators.INPUT_EMAIL_LOGIN).send_keys(test_data['login'])
+    driver.find_element(*RegisterFormLocators.INPUT_PASSWORD).send_keys(test_data['password'])
+    driver.find_element(*LoginFormLocators.BUTTON_LOGIN).click()
 
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.button_order)))
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((OrderButtonIsDisplayedLocators.BUTTON_ORDER)))
 
-    driver.find_element(*PersonalAccountLocators.personal_account_button).click()
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((PersonalAccountLocators.link_profile)))
-    driver.find_element(*PersonalAccountLocators.button_logout).click()
-    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((LoginFormLocators.label_enter)))
+    driver.find_element(*PersonalAccountLocators.PERSONAL_ACCOUNT_BUTTON).click()
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((PersonalAccountLocators.LINK_PROFILE)))
+    driver.find_element(*PersonalAccountLocators.BUTTON_LOGOUT).click()
+    WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((LoginFormLocators.LABEL_ENTER)))
 
-    section_header = driver.find_element(*LoginFormLocators.label_enter)
+    section_header = driver.find_element(*LoginFormLocators.LABEL_ENTER)
     assert section_header.is_displayed()
